@@ -19,6 +19,7 @@ Fork & Clone this repo.
   -- API: Google Calendar
 3. xOni Gaming News (Game Tracker/News)
   User Story: As a user I want to find new and upcoming games so that I can keep track of titles and add them to my wishlist.
+  API: RAWG
 ---------------------------------------------------------
 
 - [ ] Make a PR when you're done!
