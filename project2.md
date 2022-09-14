@@ -11,9 +11,14 @@ Fork & Clone this repo.
 - [ ] In this space below, list **THREE** ideas for your Project 2. For each idea, include [user stories](https://www.atlassian.com/agile/project-management/user-stories) for each idea and a link to the API(s) you want to use for it.
 
 --------------------------------------------------------
-1. 
-2. 
-3.
+1. aniTrack (Anime Tracker)
+  User Story: As a user I want to find new anime, keep track of anime I am currently watching, and filter each anime by rating or genre. So that I can refer to my list to remember anime I may be interested in.
+  -- API: https://myanimelist.net/clubs.php?cid=13727
+2. Hawaii Pa'u Riders (Non-Profit Organization)
+  User Story: As a user I want to donate, purchase merchandise, find upcoming events/fundraisers, and comment on HPR photos so that I can show my support.
+  -- API: Google Calendar
+3. xOni Gaming News (Game Tracker/News)
+  User Story: As a user I want to find new and upcoming games so that I can keep track of titles and add them to my wishlist.
 ---------------------------------------------------------
 
 - [ ] Make a PR when you're done!
