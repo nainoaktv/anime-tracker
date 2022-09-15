@@ -2,4 +2,4 @@
 <h1 align="center">aniTracker</h1>
 
 # `Wireframes`
-[data tables & models](/wireframes/data.png)
+![data tables & models](/wireframes/data.png)
