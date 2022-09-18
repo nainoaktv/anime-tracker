@@ -7,6 +7,7 @@ const flash = require('connect-flash');
 const SECRET_SESSION = process.env.SECRET_SESSION;
 const passport = require('./config/ppConfig');
 const isLoggedIn = require('./middleware/isLoggedIn');
+const { default: axios } = require('axios');
 
 // console.log(SECRET_SESSION);
 
@@ -39,6 +40,10 @@ app.use((req, res, next) => {
 
 
 app.get('/', (req, res) => {
+  let animeUrl = `https://api.jikan.moe/v4/anime`
+  axios.get(animeUrl).then(results => {
+    console.log(results);
+  })
   res.render('index');
 });
 
