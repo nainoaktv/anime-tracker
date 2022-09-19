@@ -8,6 +8,7 @@ const SECRET_SESSION = process.env.SECRET_SESSION;
 const passport = require('./config/ppConfig');
 const isLoggedIn = require('./middleware/isLoggedIn');
 const { default: axios } = require('axios');
+const apiUrl = "https://api.jikan.moe/v4"
 
 // console.log(SECRET_SESSION);
 
@@ -38,23 +39,13 @@ app.use((req, res, next) => {
 
 
 
-
 app.get('/', (req, res) => {
-  let animeUrl = `https://api.jikan.moe/v4/anime?q=${req.query.search}`;
-  axios.get(animeUrl)
-  .then(response => {
-   let animeData = response.data.data;
-   console.log(animeData);
-   res.render('index', { anime: animeData });
-  }).catch((error) => {
-    res.status(400).render(error);
-  }).finally(() => {
-    console.log(`details found`);
-  })
+  res.render('index');
 });
 
 // accessing all of our auth routes
 app.use('/auth', require('./controllers/auth'));
+app.use('/results', require('./controllers/results'));
 
 
 const PORT = process.env.PORT || 3000;
