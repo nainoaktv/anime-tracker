@@ -40,11 +40,17 @@ app.use((req, res, next) => {
 
 
 app.get('/', (req, res) => {
-  let animeUrl = `https://api.jikan.moe/v4/anime`
-  axios.get(animeUrl).then(results => {
-    console.log(results);
+  let animeUrl = `https://api.jikan.moe/v4/anime?q=${req.query.search}`;
+  axios.get(animeUrl)
+  .then(response => {
+   let animeData = response.data.data;
+   console.log(animeData);
+   res.render('index', { anime: animeData });
+  }).catch((error) => {
+    res.status(400).render(error);
+  }).finally(() => {
+    console.log(`details found`);
   })
-  res.render('index');
 });
 
 // accessing all of our auth routes
