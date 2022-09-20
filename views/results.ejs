@@ -1,6 +1,8 @@
 <h1>Results</h1>
-<% anime.forEach(ani => { %>
-  <p><%= ani.title %> </p>
-  <img src=<%= ani.images.jpg.image_url %>> 
-<% }) %>  
+<% anime.forEach(a => { %>
+  <img src=<%= a.images.jpg.image_url %>> 
+  <h1><%= a.title %> </h1>
+  <p>Episodes: <%= a.episodes %> </p>
+  <p>Syonpsis: <%= a.synopsis %> </p>
+<% }); %>  
 

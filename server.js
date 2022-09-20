@@ -8,7 +8,7 @@ const SECRET_SESSION = process.env.SECRET_SESSION;
 const passport = require('./config/ppConfig');
 const isLoggedIn = require('./middleware/isLoggedIn');
 const { default: axios } = require('axios');
-const apiUrl = "https://api.jikan.moe/v4"
+
 
 // console.log(SECRET_SESSION);
 
