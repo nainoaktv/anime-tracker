@@ -4,8 +4,12 @@ nav ul li {
   margin-right: .3em;
 }
 
-.card {
+.card-container {
   display: inline-flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
 }
 
 h1 {
