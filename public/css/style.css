@@ -4,6 +4,10 @@ nav ul li {
   margin-right: .3em;
 }
 
+.card {
+  display: inline-flex;
+}
+
 h1 {
   color: chartreuse;
 }

@@ -1,8 +1,15 @@
-<h1>Results</h1>
+<h2>Results</h2>
 <% anime.forEach(a => { %>
-  <img src=<%= a.images.jpg.image_url %>> 
-  <h1><%= a.title %> </h1>
-  <p>Episodes: <%= a.episodes %> </p>
-  <p>Syonpsis: <%= a.synopsis %> </p>
+
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src=<%= a.images.jpg.image_url %> alt="Anime Image">
+    <div class="card-body">
+      <h5 class="card-title"><%= a.title %> </h5>
+      <p class="card-text">Total Episodes: <%= a.episodes %> </p>
+      <p class="card-text">Air Date: <%= a.aired.string %></p>
+      <a href=<%= a.url %>  class="btn btn-primary">More Info</a>
+    </div>
+  </div>
+
 <% }); %>  
 
