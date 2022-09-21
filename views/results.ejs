@@ -1,4 +1,18 @@
 <h2>Results</h2>
+
+<form action="/results" method="GET">
+  <input 
+    type="search"
+    id="search" 
+    name="search" 
+    class="searchBar" 
+    style="width: 300px" 
+    placeholder="Search for an anime here..."
+    required 
+  />
+  <button type="submit">Submit</button>
+</form>
+
 <% anime.forEach(a => { %>
 
   <div class="card-container">
