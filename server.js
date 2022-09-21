@@ -46,6 +46,7 @@ app.get('/', (req, res) => {
 // accessing all of our auth routes
 app.use('/auth', require('./controllers/auth'));
 app.use('/results', require('./controllers/results'));
+app.use('/profile', require('./controllers/user-profile'));
 
 
 const PORT = process.env.PORT || 3000;
