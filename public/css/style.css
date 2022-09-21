@@ -13,5 +13,24 @@ nav ul li {
 }
 
 h1 {
-  color: chartreuse;
+  color: black;
+}
+
+.title {
+  grid-area: header;
+}
+
+.list-container {
+  grid-area: main;
+  border: solid 1px black;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 150px 150px 150px 150px;
+  grid-template-rows: 300px 300px 300px 300px;
+  grid-template-areas: 
+  ". header header ."
+  "main main . ."
+  "main main . .";
 }
