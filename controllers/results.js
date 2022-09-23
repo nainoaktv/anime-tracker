@@ -3,7 +3,7 @@ let db = require('../models')
 let router = express.Router()
 const { default: axios } = require('axios');
 
-// TODO: Display search results
+
 router.get('/', (req, res) => {
   axios.get(`https://api.jikan.moe/v4/anime/?q=${req.query.search}`)
   .then(response => {

@@ -17,6 +17,8 @@ module.exports = (sequelize, DataTypes) => {
     title: DataTypes.STRING,
     episodes: DataTypes.INTEGER,
     image_url: DataTypes.STRING
+    // add isWatched: DataTypes.BOOLEAN
+    // Migrate
   }, {
     sequelize,
     modelName: 'anime',
