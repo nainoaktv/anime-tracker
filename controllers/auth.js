@@ -16,11 +16,11 @@ router.get('/logout', (req, res) => {
     console.log('I am logged out')
   }); // logs the user out of the session
   req.flash('success', 'Logging out... See you next time!');
-  res.redirect('/');
+  res.redirect('/auth/login');
 });
 
 router.post('/login', passport.authenticate('local', {
-  successRedirect: '/index',
+  successRedirect: '/',
   failureRedirect: '/auth/login',
   successFlash: 'Welcome back ...',
   failureFlash: 'Either email or password is incorrect' 

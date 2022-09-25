@@ -1,10 +1,16 @@
 <h2>aniTracker</h2>
 <ul>
-  <li><a href="#">Home</a></li>
-  <li><a href="/profile">Profile</a></li>
+  <li><a href="/">Home</a></li>
   <li><a href="#">Characters</a></li>
-  <li><a href="#">Sign Out</a></li>
+  <% if (!currentUser) {%>
+    <li><a href="/auth/signup">Signup</a></li>
+    <li><a href="/auth/login">Login</a></li>
+<% } else { %>
+    <li><a href="/auth/logout">Logout</a></li>
+    <li><a href="/profile">Profile</a></li>
+<% } %>
 </ul>
+
 <form action="/results" method="GET">
   <input 
     type="search"
