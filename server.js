@@ -7,6 +7,7 @@ const flash = require('connect-flash');
 const SECRET_SESSION = process.env.SECRET_SESSION;
 const passport = require('./config/ppConfig');
 const isLoggedIn = require('./middleware/isLoggedIn');
+const methodOverride = require('method-override')
 const { default: axios } = require('axios');
 
 
@@ -15,6 +16,7 @@ const { default: axios } = require('axios');
 app.set('view engine', 'ejs');
 
 app.use(require('morgan')('dev'));
+app.use(methodOverride('method'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
 app.use(layouts);
@@ -46,7 +48,7 @@ app.get('/', (req, res) => {
 // accessing all of our auth routes
 app.use('/auth', require('./controllers/auth'));
 app.use('/results', require('./controllers/results'));
-app.use('/profile', isLoggedIn, require('./controllers/user-profile'));
+app.use('/profile', isLoggedIn, require('./controllers/profile'));
 
 
 const PORT = process.env.PORT || 3000;

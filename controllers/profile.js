@@ -5,7 +5,7 @@ const { default: axios } = require('axios');
 
 
 router.get('/', (req, res) => {
-  res.render('user-profile');
+  res.render('profile/show');
   });
 
 
