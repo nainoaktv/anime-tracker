@@ -11,14 +11,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.anime.belongsTo(models.user);
     }
   }
   anime.init({
     title: DataTypes.STRING,
     episodes: DataTypes.INTEGER,
     image_url: DataTypes.STRING
-    // add isWatched: DataTypes.BOOLEAN
-    // Migrate
   }, {
     sequelize,
     modelName: 'anime',
