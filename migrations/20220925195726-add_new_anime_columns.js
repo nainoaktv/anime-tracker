@@ -12,10 +12,6 @@ module.exports = {
       await queryInterface.addColumn('animes', 'userId', {
         type: Sequelize.INTEGER,
         allowNull: false
-      }),
-      await queryInterface.addColumn('animes', 'isWatching', {
-        type: Sequelize.BOOLEAN,
-        allowNull: false
       })
     ]);
   },
@@ -29,7 +25,6 @@ module.exports = {
      */
     return Promise.all([
       queryInterface.removeColumn('animes', 'userId'),
-      queryInterface.removeColumn('animes', 'isWatching'),
     ]);
   }
 };

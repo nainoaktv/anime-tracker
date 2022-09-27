@@ -1,5 +1,17 @@
 <h2>Results</h2>
 
+<ul>
+  <li><a href="/">Home</a></li>
+  <li><a href="#">Characters</a></li>
+  <% if (!currentUser) {%>
+    <li><a href="/auth/signup">Signup</a></li>
+    <li><a href="/auth/login">Login</a></li>
+<% } else { %>
+  <li><a href="/profile">Profile</a></li>
+  <li><a href="/auth/logout">Logout</a></li>
+<% } %>
+</ul>
+
 <form action="/results" method="GET">
   <input 
     type="search"
@@ -26,9 +38,15 @@
         <!-- add condition that if (isWatched === true)
         <a href="#"  class="btn btn-warning">Watching</a>
         else <a href="#"  class="btn btn-primary">+ Watchlist</a>  -->
-        
-        <a href="#"  class="btn btn-primary">+ Watchlist</a>
-        <a href=<%= a.url %>  class="btn btn-primary">More Info</a>
+        <form method="POST" action="/profile/new">
+          <input type="text" value="<%= a.images.jpg.image_url %>" name="image_url" hidden>
+          <input type="text" value="<%= a.title %>" name="title" hidden>
+          <input type="text" value="<%= a.episodes %>" name="episodes" hidden>
+          <!-- <input type="text" value="" name="title" hidden> -->
+          <input type="text" value="<%= currentUser.id %>" name="userId" hidden>
+          <a href="#" type="submit" class="btn btn-primary">+ Watchlist</a>
+          <a href=<%= a.url %>  class="btn btn-primary">More Info</a>
+        </form>
       </div>
     </div>
   </div>
