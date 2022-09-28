@@ -18,13 +18,20 @@
   <div class="list-container">
     <h2>Watchlist</h2>
     <% animes.forEach(a => { %>
-      <img src=<%= a.image_url %> alt="Anime Image" style="max-width: 300px;">
-      <h5><%= a.title %> </h5>
-      <p>Total Episodes: <%= a.episodes %> </p>
-      <br>
-      <form method="POST" action="/profile/<%= a.id %>/?_method=DELETE">
-        <button type="submit" id="delete-btn">Remove</button>
-      </form>
+       <div class="card-container">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src=<%= a.image_url %> alt="Anime Image" style="max-width: 300px;">
+          <div class="card-body">
+            <h5><%= a.title %> </h5>
+            <p>Total Episodes: <%= a.episodes %> </p>
+            <br>
+            <form method="POST" action="/profile/<%= a.id %>/?_method=DELETE">
+              <button type="submit" id="delete-btn">Remove</button>
+            </form>
+            <a href=<%= a.url %>  class="btn btn-primary" target="_blank">More Info</a>
+          </div>
+        </div>
+      </div>
     <% }) %>  
   </div>
 </div>
