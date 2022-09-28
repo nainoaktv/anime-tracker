@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
   .then(response => {
     let animeData  = response.data.data;
     console.log(animeData);
-    res.render('results', { anime: animeData});
+    res.render('results', { anime: animeData });
   }).catch((error) => {
     res.status(400).render(error);
   }).finally(() => {

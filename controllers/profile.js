@@ -25,6 +25,6 @@ router.post('/new', async (req, res) => {
   });
   console.log(newAnime.toJSON());
   // res.redirect to favorite anime
-  res.redirect('/', { animes: newAnime});
+  res.redirect('/', { favAnime: newAnime });
 })
 module.exports = router;
