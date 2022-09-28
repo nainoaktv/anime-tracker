@@ -5,6 +5,7 @@ body {
 
 #navbar {
   background-color: #232526;
+  background: white;
 }
 
 a, li {
@@ -23,7 +24,7 @@ a {
 }
 
 a:hover, li:hover {
-  color: blue;
+  color: white;
 }
 
 #searchbar {
@@ -37,6 +38,7 @@ a:hover, li:hover {
   flex-direction: row;
   justify-content: space-between;
   align-items: stretch;
+  margin: 10px 0;
 }
 
 .card {
@@ -45,7 +47,7 @@ a:hover, li:hover {
 }
 
 .title {
-  font-family: 'Bungee Spice', cursive;
+  font-family: 'Montserrat', sans-serif;
   font-size: 75px;
   text-align: center;
 }
