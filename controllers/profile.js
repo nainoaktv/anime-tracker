@@ -25,7 +25,7 @@ router.post('/new', async (req, res) => {
   });
   console.log(newAnime.toJSON());
   // res.redirect to favorite anime
-  res.redirect('/', { favAnime: newAnime });
+  res.redirect('/profile');
 })
 
 // TODO PUT Route to update users name 
