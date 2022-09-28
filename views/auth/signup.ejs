@@ -1,4 +1,19 @@
 <h1>Sign Up</h1>
+
+<div id="navbar"></div>
+<ul>
+  <li><a href="/">Home</a></li>
+  <!-- <li><a href="#">Characters</a></li> -->
+  <% if (!currentUser) {%>
+    <li><a href="/auth/signup">Signup</a></li>
+    <li><a href="/auth/login">Login</a></li>
+<% } else { %>
+  <li><a href="/profile">Profile</a></li>
+  <li><a href="/auth/logout">Logout</a></li>
+<% } %>
+</ul>
+</div>
+
 <form action="/auth/signup" method="POST">
     <label for="new-email">Email</label>
     <input id="new-email" type="email" name="email" required>

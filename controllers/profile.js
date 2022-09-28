@@ -27,4 +27,7 @@ router.post('/new', async (req, res) => {
   // res.redirect to favorite anime
   res.redirect('/', { favAnime: newAnime });
 })
+
+// TODO PUT Route to update users name 
+// TODO DELETE ROUTE to remove anime from watchlist
 module.exports = router;
