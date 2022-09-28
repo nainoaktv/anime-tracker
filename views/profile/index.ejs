@@ -22,6 +22,9 @@
       <h5><%= a.title %> </h5>
       <p>Total Episodes: <%= a.episodes %> </p>
       <br>
+      <form method="POST" action="/profile/<%= a.id %>/?_method=DELETE">
+        <button type="submit" id="delete-btn">Remove</button>
+      </form>
     <% }) %>  
   </div>
 </div>

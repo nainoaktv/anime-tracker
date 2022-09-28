@@ -4,6 +4,7 @@ let router = express.Router()
 const { default: axios } = require('axios');
 
 
+
 router.get('/', async (req, res) => {
   // Get all anime from the database
   let animes = await db.anime.findAll();
@@ -25,6 +26,15 @@ router.post('/new', async (req, res) => {
   });
   console.log(newAnime.toJSON());
   // res.redirect to favorite anime
+  res.redirect('/profile');
+})
+
+router.delete('/:id', async (req, res) => {
+
+  let animesDeleted= await db.anime.destroy({
+    where: { id: req.params.id }
+  });
+  console.log(`Amount of songs deleted: ${animesDeleted}`);
   res.redirect('/profile');
 })
 

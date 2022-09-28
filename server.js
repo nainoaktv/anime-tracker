@@ -16,7 +16,7 @@ const { default: axios } = require('axios');
 app.set('view engine', 'ejs');
 
 app.use(require('morgan')('dev'));
-app.use(methodOverride('method'));
+app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
 app.use(layouts);
