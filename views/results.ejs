@@ -1,18 +1,20 @@
-<h2>Results</h2>
+<h2 class="title">Results</h2>
 
-<ul>
-  <li><a href="/">Home</a></li>
-  <li><a href="#">Characters</a></li>
-  <% if (!currentUser) {%>
-    <li><a href="/auth/signup">Signup</a></li>
-    <li><a href="/auth/login">Login</a></li>
-<% } else { %>
-  <li><a href="/profile">Profile</a></li>
-  <li><a href="/auth/logout">Logout</a></li>
-<% } %>
-</ul>
+<div id="navbar">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="#">Characters</a></li>
+    <% if (!currentUser) {%>
+      <li><a href="/auth/signup">Signup</a></li>
+      <li><a href="/auth/login">Login</a></li>
+  <% } else { %>
+    <li><a href="/profile">Profile</a></li>
+    <li><a href="/auth/logout">Logout</a></li>
+  <% } %>
+  </ul>
+</div>
 
-<form action="/results" method="GET">
+<form id="searchbar" action="/results" method="GET">
   <input 
     type="search"
     id="search" 
@@ -44,8 +46,9 @@
           <input type="text" value="<%= a.episodes %>" name="episodes" hidden>
           <!-- <input type="text" value="" name="title" hidden> -->
           <input type="text" value="<%= currentUser.id %>" name="userId" hidden>
-          <a href="#" type="submit" class="btn btn-primary">+ Watchlist</a>
-          <a href=<%= a.url %>  class="btn btn-primary">More Info</a>
+          <button type="submit" id="watchlist">+ Watchlist</button>
+          <br>
+          <a href=<%= a.url %>  class="btn btn-primary" target="_blank">More Info</a>
         </form>
       </div>
     </div>

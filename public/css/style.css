@@ -1,7 +1,34 @@
-nav ul li {
+body {
+  background: rgb(239,255,0);
+  background: linear-gradient(90deg, rgba(239,255,0,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+#navbar {
+  background-color: #232526;
+}
+
+a, li {
+  font-size: 18px;
+  list-style: none;
   text-decoration: none;
-  display: inline-block;
-  margin-right: .3em;
+  display: inline-flex;
+  color: black;
+  padding: 0 10px 0 10px;
+  float: right;
+}
+
+a {
+  border: 2px solid black;
+  border-radius: 3px;
+}
+
+a:hover, li:hover {
+  color: blue;
+}
+
+#searchbar {
+  text-align: center;
+  margin: 15px;
 }
 
 .card-container {
@@ -12,25 +39,15 @@ nav ul li {
   align-items: stretch;
 }
 
-h1 {
-  color: black;
+.card {
+  color: white;
+  background-color: black;
 }
 
 .title {
-  grid-area: header;
+  font-family: 'Bungee Spice', cursive;
+  font-size: 75px;
+  text-align: center;
 }
 
-.list-container {
-  grid-area: main;
-  border: solid 1px black;
-}
 
-.container {
-  display: grid;
-  grid-template-columns: 150px 150px 150px 150px;
-  grid-template-rows: 300px 300px 300px 300px;
-  grid-template-areas: 
-  ". header header ."
-  "main main . ."
-  "main main . .";
-}

@@ -1,25 +1,26 @@
-<div class="container">
-  <h1 class="title">User Profile</h1>
+<div class="profile-container">
+  <h1 class="title"><%= currentUser.name %>'s </h1>
 
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="#">Characters</a></li>
-    <% if (!currentUser) {%>
-      <li><a href="/auth/signup">Signup</a></li>
-      <li><a href="/auth/login">Login</a></li>
-  <% } else { %>
-    <li><a href="profile/show">Profile</a></li>
+  <div id="navbar"></div>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="#">Characters</a></li>
+      <% if (!currentUser) {%>
+        <li><a href="/auth/signup">Signup</a></li>
+        <li><a href="/auth/login">Login</a></li>
+    <% } else { %>
+      <li><a href="/profile">Profile</a></li>
       <li><a href="/auth/logout">Logout</a></li>
-  <% } %>
-  </ul>
+    <% } %>
+    </ul>
+  </div>
 
   <div class="list-container">
     <h2>Watchlist</h2>
-    <% newAnime.forEach(a => { %>
+    <% animes.forEach(a => { %>
       <img src=<%= a.image_url %> alt="Anime Image" style="max-width: 300px;">
       <h5><%= a.title %> </h5>
       <p>Total Episodes: <%= a.episodes %> </p>
-      <p>Episodes Watched:  </p>
       <br>
     <% }) %>  
   </div>
