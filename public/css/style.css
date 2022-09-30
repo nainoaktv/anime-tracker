@@ -3,6 +3,26 @@ body {
   background: linear-gradient(90deg, rgba(239,255,0,1) 35%, rgba(0,212,255,1) 100%);
 }
 
+.title {
+  position: absolute;
+  font-family: 'Noto Sans Mono', monospace;
+  font-size: 60px;
+  background-color: #21D4FD;
+  background-image: linear-gradient(45deg, #21D4FD 0%, #B721FF 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  z-index: 1; 
+}
+.title-shadow {
+  position: absolute;
+  font-family: 'Noto Sans Mono', monospace;
+  font-size: 60px;
+  color: black;
+  text-shadow: 2px 2px black;
+  z-index: 0;
+}
+
+
 #navbar {
   background-color: #232526;
   background: white;
@@ -27,9 +47,23 @@ a:hover, li:hover {
   color: white;
 }
 
-#searchbar {
+#search-container {
+  position: absolute;
   text-align: center;
+  top: 150px;
+  left: 40%;
+}
+
+#search {
   margin: 15px;
+  border: 2px solid black;
+  border-radius: 3px;
+}
+
+.submit {
+  background-color: grey;
+  border: 2px solid black;
+  border-radius: 2px;
 }
 
 .card-container {
@@ -46,10 +80,5 @@ a:hover, li:hover {
   background-color: black;
 }
 
-.title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 75px;
-  text-align: center;
-}
 
 
