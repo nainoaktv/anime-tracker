@@ -14,8 +14,20 @@ aniTrack is a site that allows users to search for a variety of anime that they 
 ## 'Installation Instructions'
 
 1. Git Clone Repository
-2. npm install
-3. touch .env
-4. Create SECRET_SESSION=enter-your-secret-session-here in .env
-5. touch .gitignore (if needed)
-6. Place node_modules, .env, and package-lock.json in .gitignore
+- git clone paste-repo-url-here
+2. Select file in terminal
+- cd anime-tracker
+3. Run npm install in terminal
+- npm install
+4. Create .env file
+- touch .env
+5. Within .env file add the following
+- SECRET_SESSION=anything-you-want-goes-here
+6. Create a database
+- npm install sequelize-cl
+- npx sequelize-cli db:create anitrack
+8. Migrate database
+- npx sequelize-cli db:migrate
+9. Start server by running one of the following in terminal
+- nodemon (only if nodemon is installed on your machine)
+- npm start
