@@ -11,12 +11,13 @@
     <% } else { %>
       <li><a href="/profile">Profile</a></li>
       <li><a href="/auth/logout">Logout</a></li>
+      <li><a href="/profile/edit">Edit Profile</a></li>
     <% } %>
     </ul>
   </div>
 
   <div class="list-container">
-    <h2>Watchlist</h2>
+    <h2 id="watchlistTitle">Watchlist</h2>
     <% animes.forEach(a => { %>
        <div class="card-container">
         <div class="card" style="width: 15rem;">

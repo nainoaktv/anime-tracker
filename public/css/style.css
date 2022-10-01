@@ -102,3 +102,6 @@ a:hover, li:hover {
   top: 0px
 }
 
+#watchlistTitle {
+  position: relative;
+}
