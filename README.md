@@ -2,6 +2,10 @@
 <h1 align="center">aniTracker</h1>
 aniTrack is a site that allows users to search for a variety of anime that they can add to their watchlist which is located in their user profile. Users will also be able to remove any anime from their watchlist. This will allow users to keep track of anime they are watching. 
 
+# User Story
+- As a user, I want to be able to search for an anime and add it to my profiles wathclist so that I can keep track of all the animes I plan on watching.
+- As a user, I want to be able to leave comments on an anime in my watchlist so that I can give my current opinion on whether I like the anime or not.
+- As a user, I want to view more information on an anime so that I can decide if I want to add an anime to my watchlist.
 # `Wireframes`
 <h2 align="center">Data/Models</h2>
 
