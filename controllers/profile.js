@@ -6,16 +6,12 @@ const { default: axios } = require('axios');
 
 
 router.get('/', async (req, res) => {
-  if (response.status === 200) {
 
-    let animes = await db.anime.findAll();
+  let animes = await db.anime.findAll();
 
-    animes = animes.map(a => a.toJSON());
-    console.log(animes);
-    res.status(200).render('profile/index', { animes: animes });
-  } else {
-    res.status(404).render('404');
-  }
+  animes = animes.map(a => a.toJSON());
+  console.log(animes);
+  res.render('profile/index', { animes: animes });
 });
 
 router.get('/edit', (req, res) => {
@@ -79,16 +75,37 @@ router.put('/:id', async (req, res) => {
   }
 });
 
+router.post('/:id/comment', (req, res) => {
+  const createdDate = new Date().toISOString();
+  db.anime.findOne({
+    where: { id: req.params.id },
+    include: [db.user, db.comment]
+  })
+  .then((anime) => {
+    if (!anime) throw Error()
+    db.comment.create({
+      animeId: parseInt(req.params.id),
+      content: req.body.content,
+      createdAt: createdDate,
+      updatedAt: createdDate
+    }).then(comment => {
+      res.redirect(`profile/index`);
+    })
+  })
+  .catch((error) => {
+    console.log(error)
+    res.status(400).render('main/404')
+  })
+})
+
 
 router.delete('/:id', async (req, res) => {
 
   let animesDeleted= await db.anime.destroy({
     where: { id: req.params.id }
   });
-  console.log(`Amount of songs deleted: ${animesDeleted}`);
+  console.log(`Amount of animes deleted: ${animesDeleted}`);
   res.redirect('/profile');
 })
 
-// TODO PUT Route to update users name 
-// TODO DELETE ROUTE to remove anime from watchlist
 module.exports = router;

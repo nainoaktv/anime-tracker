@@ -29,7 +29,35 @@
             <form method="POST" action="/profile/<%= a.id %>/?_method=DELETE">
               <button type="submit" id="delete-btn">Remove</button>
             </form>
-            <a id="infoBtn" href=<%= a.url %>  class="btn btn-primary" target="_blank">More Info</a>
+            <h2>Comments:</h2>
+            <div class="well">
+              <form method="POST" action="./<%= a.id%>/comment">
+                  <input name="content" type="text" placeholder="Comment">
+                  <button class="btn btn-primary" type="submit">Create comment</button>
+              </form>
+            </div>
+            <div class="row">
+              <div class="well">
+                <% if(Array.isArray(a.comments) && a.comments.length > 0) { %>
+                  <% a.comments.forEach((comment) => { %>
+                    <div class="panel panel-info">
+                      <div class="panel-body">
+                        <%= comment.content %>
+                      </div>
+                      <div class="panel-footer">
+                        <b>posted at:</b> <%= comment.updatedAt %>
+                      </div>
+                    </div>
+                  <% }) %>
+                <% } else { %>
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      No Comments...
+                    </div>
+                  </div>
+                <% } %>
+              </div>
+            </div> 
           </div>
         </div>
       </div>
