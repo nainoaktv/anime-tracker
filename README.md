@@ -6,6 +6,9 @@ aniTrack is a site that allows users to search for a variety of anime that they 
 - As a user, I want to be able to search for an anime and add it to my profiles wathclist so that I can keep track of all the animes I plan on watching.
 - As a user, I want to be able to leave comments on an anime in my watchlist so that I can give my current opinion on whether I like the anime or not.
 - As a user, I want to view more information on an anime so that I can decide if I want to add an anime to my watchlist.
+(IN PROGRESS)
+- As a user, I want to input the amount of episodes I have watched for a specific anime in my watchlist so that I can remember what episode I left off on if I ever drop the anime at some point.
+- As a user, I want to choose my Top 10 Anime's to display on my profile so that other users can see what anime I'm into.
 # `Wireframes`
 <h2 align="center">Data/Models</h2>
 
