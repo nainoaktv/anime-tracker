@@ -26,30 +26,25 @@ body {
 }
 
 
-#navbar {
-  background-color: #232526;
-  background: white;
-}
-
 a, li {
   position: relative;
   font-size: 18px;
   list-style: none;
   text-decoration: none;
   display: inline-flex;
-  color: white;
+  color: #FFD200;
   padding: 0 10px 0 10px;
   float: right;
   top: 15px;
 }
 
 a {
-  border: 2px solid white;
+  border: 2px solid #F7971E;
   border-radius: 3px;
 }
 
 a:hover, li:hover {
-  color: green;
+  color: white;
 }
 
 #search-container {
@@ -66,9 +61,15 @@ a:hover, li:hover {
 }
 
 .submit {
-  background-color: grey;
+  background-color: #F7971E;
   border: 2px solid black;
   border-radius: 2px;
+  transition: color 0.1s;
+}
+
+.submit:hover {
+  color: white;
+  transition-delay: 0.1s;
 }
 
 #results-container {

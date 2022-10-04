@@ -9,6 +9,7 @@ const passport = require('./config/ppConfig');
 const isLoggedIn = require('./middleware/isLoggedIn');
 const methodOverride = require('method-override')
 const { default: axios } = require('axios');
+const { application } = require('express');
 
 
 
@@ -48,9 +49,13 @@ app.get('/', (req, res) => {
 
 // accessing all of our auth routes
 app.use('/auth', require('./controllers/auth'));
-app.use('/results', require('./controllers/results'));
+app.use('/results', isLoggedIn, require('./controllers/results'));
 app.use('/profile', isLoggedIn, require('./controllers/profile'));
+app.use('/404', require('./controllers/results'));
 
+app.use((req,res) => {
+  res.status(404).render('404');
+})
 
 const PORT = process.env.PORT || 3000;
 const server = app.listen(PORT, () => {

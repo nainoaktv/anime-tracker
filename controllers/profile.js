@@ -6,12 +6,16 @@ const { default: axios } = require('axios');
 
 
 router.get('/', async (req, res) => {
+  if (response.status === 200) {
 
-  let animes = await db.anime.findAll();
+    let animes = await db.anime.findAll();
 
-  animes = animes.map(a => a.toJSON());
-  console.log(animes);
-  res.render('profile/index', { animes: animes });
+    animes = animes.map(a => a.toJSON());
+    console.log(animes);
+    res.status(200).render('profile/index', { animes: animes });
+  } else {
+    res.status(404).render('404');
+  }
 });
 
 router.get('/edit', (req, res) => {

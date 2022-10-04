@@ -37,15 +37,11 @@
         <h5 class="card-title">"<em><%= a.title %></em>" </h5>
         <p class="card-text">Total Episodes: <%= a.episodes %> </p>
         <p class="card-text">Air Date: <%= a.aired.string %></p>
-        <!-- TODO When added to watchlist button switches to "Watched" -->
-        <!-- add condition that if (isWatched === true)
-        <a href="#"  class="btn btn-warning">Watching</a>
-        else <a href="#"  class="btn btn-primary">+ Watchlist</a>  -->
+
         <form method="POST" action="/profile/new">
           <input type="text" value="<%= a.images.jpg.image_url %>" name="image_url" hidden>
           <input type="text" value="<%= a.title %>" name="title" hidden>
           <input type="text" value="<%= a.episodes %>" name="episodes" hidden>
-          <!-- <input type="text" value="" name="title" hidden> -->
           <input type="text" value="<%= currentUser.id %>" name="userId" hidden>
           <button type="submit" id="watchlist">+ Watchlist</button>
           <a id="infoBtn" href=<%= a.url %>  class="btn btn-primary" target="_blank">More Info</a>
