@@ -33,6 +33,20 @@ router.post('/new', async (req, res) => {
   res.redirect('/profile');
 })
 
+router.get('/:id', (req, res) => {
+  db.anime.findOne({
+    where: { id: req.params.id },
+    include: [db.user, db.comment]
+  })
+  .then((anime) => {
+    if(!anime) throw Error()
+    res.render('profile/show', { anime: anime })
+  })
+  .catch((error) => {
+    res.status(400).render('404');
+  })
+});
+
 router.put('/:id', async (req, res) => {
   try {
       const foundUser = await db.user.findOne({ where: { email: req.body.email }});

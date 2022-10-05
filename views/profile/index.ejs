@@ -23,7 +23,7 @@
         <div class="card" style="width: 15rem;">
           <img class="card-img-top" src=<%= a.image_url %> alt="Anime Image" style="max-width: 300px;">
           <div class="card-body">
-            <h5 class="card-title">"<em><%= a.title %></em>" </h5>
+            <a href="/profile/<%= a.id %> " class="card-title">"<em><%= a.title %></em>" </a>
             <p>Total Episodes: <%= a.episodes %> </p>
             <br>
             <form method="POST" action="/profile/<%= a.id %>/?_method=DELETE">
@@ -31,7 +31,7 @@
             </form>
             <h2>Comments:</h2>
             <div class="well">
-              <form method="POST" action="./<%= a.id%>/comment">
+              <form method="POST" action="./profile/<%= a.id%>">
                   <input name="content" type="text" placeholder="Comment">
                   <button class="btn btn-primary" type="submit">Create comment</button>
               </form>
