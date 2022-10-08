@@ -112,6 +112,17 @@ a:hover, li:hover {
 
 /* USER PROFILE STYLING */
 
+#anime-link {
+  position: absolute;
+  background-color: black;
+  text-shadow: 1px 1px 3px black;
+}
+
+#profileCardBody {
+  display: inline-block;
+  padding: 50px 0;
+}
+
 .list-container {
   position: relative;
   display: inline-block;

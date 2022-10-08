@@ -21,8 +21,8 @@
        <div class="card-container">
         <div class="card" style="width: 15rem;">
           <img class="card-img-top" src=<%= a.image_url %> alt="Anime Image" style="max-width: 300px;">
-          <div class="card-body">
-            <a href="/profile/<%= a.id %> " class="card-title">"<em><%= a.title %></em>" </a>
+          <div class="card-body" id="profileCardBody">
+            <a href="/profile/<%= a.id %> " class="card-title" id="anime-link">"<em><%= a.title %></em>" </a>
             <p>Total Episodes: <%= a.episodes %> </p>
             <br>
             <form method="POST" action="/profile/<%= a.id %>/?_method=DELETE">
