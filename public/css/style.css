@@ -109,3 +109,10 @@ a:hover, li:hover {
   top: 150px;
   left: 200px;
 }
+
+.showDetails {
+  position: relative;
+  display: inline-block;
+  color: white;
+  top: 150px;
+}
