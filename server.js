@@ -12,9 +12,6 @@ const { default: axios } = require('axios');
 const { application } = require('express');
 
 
-
-// console.log(SECRET_SESSION);
-
 app.set('view engine', 'ejs');
 
 app.use(require('morgan')('dev'));
@@ -42,21 +39,23 @@ app.use((req, res, next) => {
 });
 
 
-
-app.get('/', (req, res) => {
+// INDEX
+app.get('/', isLoggedIn, (req, res) => {
   res.render('index');
 });
 
-// accessing all of our auth routes
+// ROUTES
 app.use('/auth', require('./controllers/auth'));
 app.use('/results', isLoggedIn, require('./controllers/results'));
 app.use('/profile', isLoggedIn, require('./controllers/profile'));
 app.use('/404', require('./controllers/results'));
 
+// 404
 app.use((req,res) => {
   res.status(404).render('404');
-})
+});
 
+// SERVER
 const PORT = process.env.PORT || 3000;
 const server = app.listen(PORT, () => {
   console.log(`🎧 You're listening to the smooth sounds of port ${PORT} 🎧`);

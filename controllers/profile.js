@@ -89,7 +89,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-router.post('/:id/comment', (req, res) => {
+router.post('/:id', (req, res) => {
   const createdDate = new Date().toISOString();
   db.anime.findOne({
     where: { id: req.params.id },
@@ -103,7 +103,7 @@ router.post('/:id/comment', (req, res) => {
       createdAt: createdDate,
       updatedAt: createdDate
     }).then(comment => {
-      res.redirect(`profile/index`);
+      res.redirect(`${req.params.id}`);
     })
   })
   .catch((error) => {

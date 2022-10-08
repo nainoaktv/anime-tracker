@@ -110,7 +110,9 @@ a:hover, li:hover {
   left: 200px;
 }
 
-.showDetails {
+/* USER PROFILE STYLING */
+
+.list-container {
   position: relative;
   display: inline-block;
   color: white;
