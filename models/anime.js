@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
   anime.init({
     title: DataTypes.STRING,
     episodes: DataTypes.INTEGER,
-    image_url: DataTypes.STRING
+    image_url: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'anime',

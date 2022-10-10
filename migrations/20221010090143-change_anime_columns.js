@@ -8,9 +8,9 @@ module.exports = {
      * Example:
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
-    return Promise.all([
-      await queryInterface.addColumn('animes', 'userId', {
-        type: Sequelize.INTEGER,
+     return Promise.all([
+      await queryInterface.changeColumn('animes', 'episodes', {
+        type: Sequelize.STRING,
       }),
     ]);
   },
@@ -22,8 +22,8 @@ module.exports = {
      * Example:
      * await queryInterface.dropTable('users');
      */
-    return Promise.all([
-      queryInterface.removeColumn('animes', 'userId'),
+     return Promise.all([
+      queryInterface.removeColumn('animes', 'episodes'),
     ]);
   }
 };

@@ -21,7 +21,7 @@ router.get('/edit', (req, res) => {
 router.post('/new', async (req, res) => {
 
   console.log('********* /new', req.body);
-
+  
   const newAnime = await db.anime.create({
     title: req.body.title,
     episodes: req.body.episodes,
@@ -29,7 +29,7 @@ router.post('/new', async (req, res) => {
     userId: parseInt(req.body.userId)
   });
   console.log(newAnime.toJSON());
-
+  
   res.redirect('/profile');
 })
 

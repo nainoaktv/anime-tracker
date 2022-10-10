@@ -4,6 +4,8 @@ body {
   background: linear-gradient(to right, #434343, #000000); 
 }
 
+/* LOGIN PAGE STYLING */
+
 .title {
   position: absolute;
   font-family: 'Noto Sans Mono', monospace;
