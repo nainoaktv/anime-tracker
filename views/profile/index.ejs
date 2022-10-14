@@ -23,14 +23,18 @@
           <img class="card-img-top" src=<%= a.image_url %> alt="Anime Image" style="max-width: 300px;">
           <div class="card-body" id="profileCardBody">
             <a href="/profile/<%= a.id %> " class="card-title" id="anime-link">"<em><%= a.title %></em>" </a>
-            <p>Total Episodes: <%= a.episodes %> </p>
-            <br>
-            <form method="POST" action="/profile/<%= a.id %>/?_method=DELETE">
-              <button type="submit" id="delete-btn">Remove</button>
-            </form>
+            <% if (a.episodes === '') { %> 
+              <p>Total Episodes: TBD </p>
+              <% } else { %> 
+              <p>Total Episodes: <%= a.episodes %> </p>
+              <% } %> 
+              <br>
+              <form method="POST" action="/profile/<%= a.id %>/?_method=DELETE">
+                <button type="submit" id="delete-btn">Remove</button>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
-    <% }) %>  
+      <% }) %>  
+    </div>
   </div>
-</div>
