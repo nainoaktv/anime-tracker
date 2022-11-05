@@ -1,7 +1,7 @@
 <div class="profile-container">
   <h1 class="title"><%= currentUser.name %>'s </h1>
 
-  <div id="navbar"></div>
+  <div id="navbar">
     <ul>
       <li><a href="/">Home</a></li>
       <% if (!currentUser) {%>
@@ -30,7 +30,7 @@
               <% } %> 
               <br>
               <form method="POST" action="/profile/<%= a.id %>/?_method=DELETE">
-                <button type="submit" id="delete-btn">Remove</button>
+                <button type="submit" id="removeBtn">Remove</button>
               </form>
             </div>
           </div>

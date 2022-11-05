@@ -1,6 +1,6 @@
 <h1>Sign Up</h1>
 
-<div id="navbar"></div>
+<div id="navbar">
 <ul>
   <li><a href="/">Home</a></li>
   <!-- <li><a href="#">Characters</a></li> -->
@@ -14,16 +14,19 @@
 </ul>
 </div>
 
-<form action="/auth/signup" method="POST">
+<form action="/auth/signup" method="POST" id="signUpForm">
+  <div>
     <label for="new-email">Email</label>
     <input id="new-email" type="email" name="email" required>
-  
+  </div>
+  <div>
     <label for="new-name">Name</label>
     <input id="new-name" type="text" name="name" required>
-  
+  </div>
+  <div>
     <label for="new-password">Password</label>
     <input id="new-password" type="password" name="password" required>
-  
+  <div>
     <input type="submit" value="Sign up">
 </form>
   

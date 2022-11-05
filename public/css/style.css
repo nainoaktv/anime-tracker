@@ -1,32 +1,9 @@
+
 body {
-  background: #000000; 
-  background: -webkit-linear-gradient(to right, #434343, #000000); 
-  background: linear-gradient(to right, #434343, #000000); 
+  background: #116466; 
+  background: -webkit-linear-gradient(to right, #2C3531 10%, #116466); 
+  background: linear-gradient(to right, #2C3531 10%, #116466); 
 }
-
-/* LOGIN PAGE STYLING */
-
-.title {
-  position: absolute;
-  font-family: 'Noto Sans Mono', monospace;
-  font-size: 60px;
-  background-color: #F7971E;
-  background-image: linear-gradient(45deg, #F7971E 0%, #FFD200 50%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; 
-  z-index: 1;
-  left: 50px;
-}
-.title-shadow {
-  position: absolute;
-  font-family: 'Noto Sans Mono', monospace;
-  font-size: 60px;
-  color: black;
-  text-shadow: 2px 2px 4px black;
-  z-index: 0;
-  left: 50px;
-}
-
 
 a, li {
   position: relative;
@@ -36,7 +13,6 @@ a, li {
   display: inline-flex;
   color: #FFD200;
   padding: 0 10px 0 10px;
-  float: right;
   top: 15px;
 }
 
@@ -48,6 +24,177 @@ a {
 a:hover, li:hover {
   color: white;
 }
+
+#navbar {
+  float: right;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.title {
+  position: absolute;
+  font-family: 'Noto Sans Mono', monospace;
+  font-size: 60px;
+  background-color: white;
+  background-image: linear-gradient(45deg, white 0%, #D1E8E2 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  z-index: 1;
+  left: 50px;
+  top: 10px;
+}
+
+.title-shadow {
+  position: absolute;
+  font-family: 'Noto Sans Mono', monospace;
+  font-size: 60px;
+  color: black;
+  text-shadow: 2px 2px 4px black;
+  z-index: 0;
+  left: 50px;
+  top: 10px;
+}
+
+/* LOG IN PAGE STYLING */
+
+#pleaseSignIn {
+  color: #FFCB9A;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.form-floating {
+  margin: 10px;
+}
+
+/* SIGN IN BUTTON */
+#signInBtn {
+  position: relative;
+  font-family: 'Quicksand', sans-serif;
+  background: none;
+  border: none;
+  color: #D9B08C;
+  transition: color 0.4s;
+}
+
+#signInBtn:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+  border-bottom: 3px solid #2C3531;
+  border-right: 3px solid #2C3531;
+  transition: all 0.4s, opacity 0.1s 0.4s;
+  opacity: 0;
+}
+
+#signInBtn:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+  border-bottom: 3px solid #2C3531;
+  border-right: 3px solid #2C3531;
+  transition: all 0.4s, opacity 0.1s 0.4s;
+  opacity: 0;
+}
+
+#signInBtn:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 0;
+  left: 0;
+  border-top: 3px solid #2C3531;
+  border-left: 3px solid #2C3531;
+  transition: all 0.4s, opacity 0.1s 0.4s;
+  opacity: 0;
+}
+
+#signInBtn:hover {
+  color: white;
+}
+
+#signInBtn:hover:after, #signInBtn:hover:before {
+  width: calc(100% + 15px);
+  height: calc(100% + 15px);
+  transition: all 0.4s, opacity 0.1s;
+  opacity: 1;
+}
+/* ========================================================== */
+
+/* SIGN UP BUTTON START */
+#signUpBtn {
+  position: relative;
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  justify-content: center;
+  text-decoration: none;
+  border: none;
+  color: #D9B08C;
+  transition: color 0.4s;
+}
+
+#signUpBtn:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+  border-bottom: 3px solid #2C3531;
+  border-right: 3px solid #2C3531;
+  transition: all 0.4s, opacity 0.1s 0.4s;
+  opacity: 0;
+}
+
+#signUpBtn:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+  border-bottom: 3px solid #2C3531;
+  border-right: 3px solid #2C3531;
+  transition: all 0.4s, opacity 0.1s 0.4s;
+  opacity: 0;
+}
+
+#signUpBtn:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 0;
+  left: 0;
+  border-top: 3px solid #2C3531;
+  border-left: 3px solid #2C3531;
+  transition: all 0.4s, opacity 0.1s 0.4s;
+  opacity: 0;
+}
+
+#signUpBtn:hover {
+  color: white;
+}
+
+#signUpBtn:hover:after, #signUpBtn:hover:before {
+  width: calc(100% + 15px);
+  height: calc(100% + 15px);
+  transition: all 0.4s, opacity 0.1s;
+  opacity: 1;
+}
+/* ========================================================== */
+
+
+/* SIGN UP FORM */
+
+
+
+/* ========================================================== */
 
 #search-container {
   position: absolute;
